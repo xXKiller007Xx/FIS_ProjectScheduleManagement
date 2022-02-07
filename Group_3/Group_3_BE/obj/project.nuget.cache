@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UzUSFQXcHCc9R+10Kjfnr94YwRWR6876M/I6DhX2SN1d8+I171nNqWiEmD4HJYqTSMkrhdFRubxWfxNf2b5EAA==",
+  "dgSpecHash": "RZhr/xM2aDwpSBie+nYhYUYSuL4I8yvFmMuuna5/VpQY610OrRzHEll3c4aDaXefxktz7XylN5bVI73FsT80Pg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\Group_3\\Group_3_BE\\Group_3_BE.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE\\Group_3_BE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\caseextensions\\1.1.0\\caseextensions.1.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",

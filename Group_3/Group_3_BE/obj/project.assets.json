@@ -12320,11 +12320,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\Group_3\\Group_3_BE\\Group_3_BE.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE\\Group_3_BE.csproj",
       "projectName": "Group_3_BE",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\Group_3\\Group_3_BE\\Group_3_BE.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE\\Group_3_BE.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\Group_3\\Group_3_BE\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

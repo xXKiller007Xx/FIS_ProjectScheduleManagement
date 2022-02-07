@@ -19,7 +19,7 @@ namespace Group_3_BE.Models
         public DateTime? DeletedAt { get; set; }
         public long? StatusId { get; set; }
 
-        public virtual StatuDAO Status { get; set; }
+        public virtual StatusDAO Status { get; set; }
         public virtual ICollection<TaskDAO> Tasks { get; set; }
     }
 }

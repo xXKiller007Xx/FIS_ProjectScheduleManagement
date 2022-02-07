@@ -21,7 +21,7 @@ namespace Group_3_BE.Models
         public long? StatusId { get; set; }
 
         public virtual ProjectDAO Project { get; set; }
-        public virtual StatuDAO Status { get; set; }
+        public virtual StatusDAO Status { get; set; }
         public virtual TaskTypeDAO TaskType { get; set; }
     }
 }

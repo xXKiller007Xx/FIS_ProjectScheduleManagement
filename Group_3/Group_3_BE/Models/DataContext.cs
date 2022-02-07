@@ -4,18 +4,18 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Group_3_BE.Models
 {
-    public partial class ProjectManagementContext : DbContext
+    public partial class DataContext : DbContext
     {
         public virtual DbSet<EmployeeDAO> Employees { get; set; }
         public virtual DbSet<GenderDAO> Genders { get; set; }
         public virtual DbSet<JobDAO> Jobs { get; set; }
         public virtual DbSet<ProjectDAO> Projects { get; set; }
-        public virtual DbSet<StatuDAO> Statuses { get; set; }
+        public virtual DbSet<StatusDAO> Statuses { get; set; }
         public virtual DbSet<TaskDAO> Tasks { get; set; }
         public virtual DbSet<TaskEmployeeMappingDAO> TaskEmployeeMappings { get; set; }
         public virtual DbSet<TaskTypeDAO> TaskTypes { get; set; }
 
-        public ProjectManagementContext(DbContextOptions<ProjectManagementContext> options) : base(options)
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
         }
 
@@ -134,7 +134,7 @@ namespace Group_3_BE.Models
                     .HasConstraintName("FK__Project__StatusI__286302EC");
             });
 
-            modelBuilder.Entity<StatuDAO>(entity =>
+            modelBuilder.Entity<StatusDAO>(entity =>
             {
                 entity.ToTable("Status");
 

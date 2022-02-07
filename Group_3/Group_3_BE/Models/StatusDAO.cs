@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Group_3_BE.Models
 {
-    public partial class StatuDAO
+    public partial class StatusDAO
     {
-        public StatuDAO()
+        public StatusDAO()
         {
             Employees = new HashSet<EmployeeDAO>();
             Projects = new HashSet<ProjectDAO>();
