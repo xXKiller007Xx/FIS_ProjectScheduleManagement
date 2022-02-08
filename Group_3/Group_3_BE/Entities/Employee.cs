@@ -10,11 +10,11 @@ namespace Group_3_BE.Entities
 {
     public class Employee : DataEntity, IEquatable<Employee>
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
-        public long JobId { get; set; }
-        public long GenderId { get; set; }
+        public long? JobId { get; set; }
+        public long? GenderId { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
@@ -23,7 +23,7 @@ namespace Group_3_BE.Entities
         public DateTime UpdatedAt { get; set; }
         public DateTime? DeletedAt { get; set; }
         public bool Used { get; set; }
-        public long StatusId { get; set; }
+        public long? StatusId { get; set; }
         public Status Status { get; set; }
         public Job Job { get; set; }
         public Gender Gender { get; set; }
@@ -47,6 +47,9 @@ namespace Group_3_BE.Entities
         public StringFilter Address { get; set; }
         public StringFilter Phone { get; set; }
         public StringFilter Email { get; set; }
+        public DateFilter CreatedAt { get; set; }
+        public DateFilter UpdatedAt { get; set; }
+        public IdFilter StatusId { get; set; }
         public List<EmployeeFilter> OrFilter { get; set; }
         public EmployeeOrder OrderBy { get; set; }
         public EmployeeSelect Selects { get; set; }
