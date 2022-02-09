@@ -53,6 +53,7 @@ namespace Group_3_BE.Entities
         public List<EmployeeFilter> OrFilter { get; set; }
         public EmployeeOrder OrderBy { get; set; }
         public EmployeeSelect Selects { get; set; }
+        public string Search { get; set; }
     }
     [JsonConverter(typeof(StringEnumConverter))]
     public enum EmployeeOrder
