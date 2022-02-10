@@ -37,8 +37,11 @@ namespace Group_3_BE.Entities
         public StringFilter Name { get; set; }
         public StringFilter Description { get; set; }
         public DateFilter CreatedAt { get; set; }
-        public DateFilter UpdatedAd { get; set; }
+        public DateFilter UpdatedAt { get; set; }
         public IdFilter StatusId { get; set; }
+        public List<TaskTypeFilter> OrFilter { get; set; }
+        public TaskTypeOrder OrderBy { get; set; }
+        public TaskTypeSelect Selects { get; set; }
     }
 
     [JsonConverter(typeof(StringEnumConverter))]

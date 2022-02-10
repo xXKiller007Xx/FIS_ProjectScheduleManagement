@@ -50,7 +50,7 @@ namespace Group_3_BE.Entities
         public IdFilter ProjectId { get; set; }
         public IdFilter TaskTypeId { get; set; }
         public DateFilter CreatedAt { get; set; }
-        public DateFilter UpdatedAd { get; set; }
+        public DateFilter UpdatedAt { get; set; }
         public IdFilter StatusId { get; set; }
 
         public List<TaskFilter> OrFilter { get; set; }

@@ -43,7 +43,7 @@ namespace Group_3_BE.Entities
         public DateFilter FinishDate { get; set; }
         public LongFilter Percentage { get; set; }
         public DateFilter CreatedAt { get; set; }
-        public DateFilter UpdatedAd { get; set; }
+        public DateFilter UpdatedAt { get; set; }
         public IdFilter StatusId { get; set; }
 
         public List<ProjectFilter> OrFilter { get; set; }
