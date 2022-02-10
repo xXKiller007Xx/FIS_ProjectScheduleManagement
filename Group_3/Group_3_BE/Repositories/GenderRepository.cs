@@ -115,7 +115,7 @@ namespace Group_3_BE.Repositories
 
         public async Task<List<Gender>> List(GenderFilter filter)
         {
-            if(filter == null) return new List<Gender>();
+            if (filter == null) return new List<Gender>();
             IQueryable<GenderDAO> GenderDAOs = DataContext.Genders;
             GenderDAOs = DynamicFilter(GenderDAOs, filter);
             GenderDAOs = DynamicOrder(GenderDAOs, filter);
