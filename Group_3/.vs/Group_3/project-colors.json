@@ -5,6 +5,11 @@
       "ProjectGuid": "4607dff3-c690-4aef-9e0c-08a228a252dd",
       "DisplayName": "Group_3_BE",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 1

@@ -12315,19 +12315,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\eco\\.nuget\\packages\\": {}
+    "C:\\Users\\hungs\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eco\\OneDrive - vnu.edu.vn\\Máy tính\\Project Nhom 3\\Group_3\\Group_3_BE\\Group_3_BE.csproj",
+      "projectUniqueName": "D:\\Project\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE\\Group_3_BE.csproj",
       "projectName": "Group_3_BE",
-      "projectPath": "C:\\Users\\eco\\OneDrive - vnu.edu.vn\\Máy tính\\Project Nhom 3\\Group_3\\Group_3_BE\\Group_3_BE.csproj",
-      "packagesPath": "C:\\Users\\eco\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eco\\OneDrive - vnu.edu.vn\\Máy tính\\Project Nhom 3\\Group_3\\Group_3_BE\\obj\\",
+      "projectPath": "D:\\Project\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE\\Group_3_BE.csproj",
+      "packagesPath": "C:\\Users\\hungs\\.nuget\\packages\\",
+      "outputPath": "D:\\Project\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\eco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hungs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12428,6 +12433,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.10, 3.1.10]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.22, 3.1.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
