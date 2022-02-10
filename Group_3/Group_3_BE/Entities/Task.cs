@@ -25,7 +25,7 @@ namespace Group_3_BE.Entities
 
         public Project Project { get; set; }
         public TaskType TaskType { get; set; }
-        public List<TaskEmployeeMapping> EmployeeMappings { get; set; }
+        public List<TaskEmployeeMapping> TaskEmployeeMappings { get; set; }
         public Status Status { get; set; }
 
         public bool Equals(Task other)
@@ -51,7 +51,6 @@ namespace Group_3_BE.Entities
         public IdFilter TaskTypeId { get; set; }
         public DateFilter CreatedAt { get; set; }
         public DateFilter UpdatedAd { get; set; }
-        public DateFilter DeletedAt { get; set; }
         public IdFilter StatusId { get; set; }
 
         public List<TaskFilter> OrFilter { get; set; }

@@ -24,6 +24,7 @@ namespace Group_3_BE.Entities
         public DateTime? DeletedAt { get; set; }
         public bool Used { get; set; }
         public long? StatusId { get; set; }
+        public List<TaskEmployeeMapping> TaskEmployeeMappings { get; set; }
         public Status Status { get; set; }
         public Job Job { get; set; }
         public Gender Gender { get; set; }

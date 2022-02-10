@@ -35,7 +35,21 @@ namespace Group_3_BE.Entities
 
     public class ProjectFilter : FilterEntity
     {
+        public IdFilter Id { get; set; }
+        public StringFilter Code { get; set; }
+        public StringFilter Name { get; set; }
+        public StringFilter Description { get; set; }
+        public DateFilter StartDate { get; set; }
+        public DateFilter FinishDate { get; set; }
+        public LongFilter Percentage { get; set; }
+        public DateFilter CreatedAt { get; set; }
+        public DateFilter UpdatedAd { get; set; }
+        public IdFilter StatusId { get; set; }
 
+        public List<ProjectFilter> OrFilter { get; set; }
+        public ProjectOrder OrderBy { get; set; }
+        public ProjectSelect Selects { get; set; }
+        public string Search { get; set; }
     }
 
     [JsonConverter(typeof(StringEnumConverter))]
@@ -48,7 +62,21 @@ namespace Group_3_BE.Entities
         StartDate = 4,
         FinishDate = 5,
         Percentage = 6,
-        UpdatedAt = 9,
-        Status = 10,
+        UpdatedAt = 7,
+        Status = 8,
+    }
+
+    [Flags]
+    public enum ProjectSelect: long
+    {
+        ALL = E.ALL,
+        Id = E._0,
+        Code = E._1,
+        Name = E._2,
+        Description = E._3,
+        StartDate = E._4,
+        FinishDate = E._5,
+        Percentage = E._6,
+        Status = E._7,
     }
 }
