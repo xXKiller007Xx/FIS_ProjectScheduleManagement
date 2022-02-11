@@ -7,7 +7,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Group_3_BE_Tests
+namespace Group_3_BE_Tests.RepositoriesTest
 {
     [TestFixture]
     public class EmployeeRepoTest : CommonTests
