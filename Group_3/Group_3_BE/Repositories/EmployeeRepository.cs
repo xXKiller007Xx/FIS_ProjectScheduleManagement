@@ -116,34 +116,34 @@ namespace Group_3_BE.Repositories
                     switch (filter.OrderBy)
                     {
                         case EmployeeOrder.Id:
-                            query = query.OrderBy(q => q.Id);
+                            query = query.OrderByDescending(q => q.Id);
                             break;
                         case EmployeeOrder.Code:
-                            query = query.OrderBy(q => q.Code);
+                            query = query.OrderByDescending(q => q.Code);
                             break;
                         case EmployeeOrder.Name:
-                            query = query.OrderBy(q => q.Name);
+                            query = query.OrderByDescending(q => q.Name);
                             break;
                         case EmployeeOrder.Gender:
-                            query = query.OrderBy(q => q.GenderId);
+                            query = query.OrderByDescending(q => q.GenderId);
                             break;
                         case EmployeeOrder.DateOfBirth:
-                            query = query.OrderBy(q => q.DateOfBirth);
+                            query = query.OrderByDescending(q => q.DateOfBirth);
                             break;
                         case EmployeeOrder.Job:
-                            query = query.OrderBy(q => q.JobId);
+                            query = query.OrderByDescending(q => q.JobId);
                             break;
                         case EmployeeOrder.Address:
-                            query = query.OrderBy(q => q.Address);
+                            query = query.OrderByDescending(q => q.Address);
                             break;
                         case EmployeeOrder.Phone:
-                            query = query.OrderBy(q => q.Phone);
+                            query = query.OrderByDescending(q => q.Phone);
                             break;
                         case EmployeeOrder.Email:
-                            query = query.OrderBy(q => q.Email);
+                            query = query.OrderByDescending(q => q.Email);
                             break;
                         case EmployeeOrder.Status:
-                            query = query.OrderBy(q => q.StatusId);
+                            query = query.OrderByDescending(q => q.StatusId);
                             break;
                     }
                     break;
@@ -298,8 +298,8 @@ namespace Group_3_BE.Repositories
             EmployeeDAO.Email = Employee.Email;
             EmployeeDAO.StatusId = Employee.StatusId;
             EmployeeDAO.Used = false;
-            EmployeeDAO.CreatedAt = StaticParams.DateTimeNow;
-            EmployeeDAO.UpdatedAt = StaticParams.DateTimeNow;
+            EmployeeDAO.CreatedAt = DateTime.Now;
+            EmployeeDAO.UpdatedAt = DateTime.Now;
             DataContext.Employees.Add(EmployeeDAO);
             await DataContext.SaveChangesAsync();
             Employee.Id = EmployeeDAO.Id;
@@ -321,14 +321,20 @@ namespace Group_3_BE.Repositories
             EmployeeDAO.Phone = Employee.Phone;
             EmployeeDAO.Email = Employee.Email;
             EmployeeDAO.StatusId = Employee.StatusId;
-            EmployeeDAO.UpdatedAt = StaticParams.DateTimeNow;
+            EmployeeDAO.UpdatedAt = DateTime.Now;
             await DataContext.SaveChangesAsync();
             return true;
         }
 
         public async Task<bool> Delete(Employee Employee)
         {
-            await DataContext.Employees.Where(x => x.Id == Employee.Id).UpdateFromQueryAsync(x => new EmployeeDAO { DeletedAt = StaticParams.DateTimeNow });
+            List<TaskEmployeeMappingDAO> TaskEmployeeMappingDAOs = DataContext.TaskEmployeeMappings.Where(t => t.EmployeeId == Employee.Id).ToList();
+            foreach (var item in TaskEmployeeMappingDAOs)
+            {
+                DataContext.TaskEmployeeMappings.Remove(item);
+                await DataContext.SaveChangesAsync();
+            }
+            await DataContext.Employees.Where(x => x.Id == Employee.Id).UpdateFromQueryAsync(x => new EmployeeDAO { DeletedAt = DateTime.Now });
             return true;
         }
 

@@ -5,6 +5,11 @@ namespace Group_3_BE.Models
 {
     public partial class TaskDAO
     {
+        public TaskDAO()
+        {
+            TaskEmployeeMappings = new HashSet<TaskEmployeeMappingDAO>();
+        }
+
         public long Id { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
@@ -23,8 +28,6 @@ namespace Group_3_BE.Models
         public virtual ProjectDAO Project { get; set; }
         public virtual StatusDAO Status { get; set; }
         public virtual TaskTypeDAO TaskType { get; set; }
-        // Tự thêm do nó k gen
         public virtual ICollection<TaskEmployeeMappingDAO> TaskEmployeeMappings { get; set; }
-
     }
 }

@@ -24,7 +24,7 @@ namespace Group_3_BE.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-Q6N4J46;Initial Catalog=ProjectManagement;Integrated Security=True;");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-Q6N4J46;Initial Catalog=ProjectManagement;Integrated Security=True");
             }
         }
 
@@ -189,19 +189,22 @@ namespace Group_3_BE.Models
 
             modelBuilder.Entity<TaskEmployeeMappingDAO>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => new { e.TaskId, e.EmployeeId })
+                    .HasName("PK__TaskEmpl__7BC44D40508088ED");
 
                 entity.ToTable("TaskEmployeeMapping");
 
                 entity.HasOne(d => d.Employee)
-                    .WithMany()
+                    .WithMany(p => p.TaskEmployeeMappings)
                     .HasForeignKey(d => d.EmployeeId)
-                    .HasConstraintName("FK__TaskEmplo__Emplo__3D5E1FD2");
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__TaskEmplo__Emplo__3E52440B");
 
                 entity.HasOne(d => d.Task)
-                    .WithMany()
+                    .WithMany(p => p.TaskEmployeeMappings)
                     .HasForeignKey(d => d.TaskId)
-                    .HasConstraintName("FK__TaskEmplo__TaskI__3C69FB99");
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__TaskEmplo__TaskI__3D5E1FD2");
             });
 
             modelBuilder.Entity<TaskTypeDAO>(entity =>
