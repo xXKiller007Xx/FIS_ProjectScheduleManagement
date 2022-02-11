@@ -274,6 +274,8 @@ namespace Group_3_BE.Repositories
                             Name = x.Status.Name,
                         },
                     }).ToListAsync();
+
+            if (TaskType == null) return null;
             return TaskType;
         }
 
@@ -355,7 +357,7 @@ namespace Group_3_BE.Repositories
 
                 DataContext.TaskTypes.Add(TaskTypeDAO);
             }
-            await DataContext.BulkMergeAsync(TaskTypeDAOs);
+            await DataContext.BulkUpdateAsync(TaskTypeDAOs);
             return true;
         }
         public async Task<bool> BulkDelete(List<TaskType> TaskTypes)

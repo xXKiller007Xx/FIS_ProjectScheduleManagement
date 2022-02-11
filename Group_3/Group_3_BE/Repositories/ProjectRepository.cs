@@ -147,7 +147,9 @@ namespace Group_3_BE.Repositories
                 StartDate = filter.Selects.Contains(ProjectSelect.StartDate) ? q.StartDate : default(DateTime),
                 FinishDate = filter.Selects.Contains(ProjectSelect.FinishDate) ? q.FinishDate : default(DateTime),
                 Percentage = filter.Selects.Contains(ProjectSelect.Percentage) ? q.Percentage : default(int),
-                Status = filter.Selects.Contains(ProjectSelect.Code) && q.Status != null ? new Status
+
+                StatusId = filter.Selects.Contains(ProjectSelect.Status) ? q.StatusId : default(long),
+                Status = filter.Selects.Contains(ProjectSelect.Status) && q.Status != null ? new Status
                 {
                     Id = q.Status.Id,
                     Code = q.Status.Code,
