@@ -200,5 +200,48 @@ namespace Group_3_BE_Tests.RepositoriesTest
             Assert.AreEqual(2, Output);
         }
 
+
+        // BulkDelete
+        [Test]
+        public async System.Threading.Tasks.Task TaskType_BulkDelete_ReturnTrue()
+        {
+            TaskType Input1 = new TaskType
+            {
+                Id = 0,
+                Code = "Type1",
+                Name = "Loai cong viec 1",
+                Description = "Mo ta",
+                CreatedAt = DateTime.Now,
+                UpdatedAt = DateTime.Now,
+                StatusId = StatusEnum.ACTIVE.Id,
+            };
+            await repository.Create(Input1);
+            
+            TaskType Input2 = new TaskType
+            {
+                Id = 0,
+                Code = "Type2",
+                Name = "Loai cong viec 2",
+                Description = "Mo ta",
+                CreatedAt = DateTime.Now,
+                UpdatedAt = DateTime.Now,
+                StatusId = StatusEnum.ACTIVE.Id,
+            };
+            await repository.Create(Input2);
+
+            List<TaskType> Input = new List<TaskType>
+            {
+                new TaskType { Id = 1 },
+                new TaskType {Id = 2 },
+            };
+            await repository.BulkDelete(Input);
+
+            Init();
+            //List<TaskType> Outs = await repository.List(new List<long> { 1, 2});
+            //foreach(var Out in Outs)
+            //{
+            //    Assert.AreEqual(null, Out.DeletedAt);
+            //}
+        }
     }
 }
