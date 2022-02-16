@@ -13,19 +13,18 @@ namespace Group_3_BE.Repositories
         IEmployeeRepository EmployeeRepository { get; }
         IProjectRepository ProjectRepository { get; }
         ITaskTypeRepository TaskTypeRepository { get; }
+        ITaskRepository TaskRepository { get; }
     }
     public class UOW : IUOW
     {
         private DataContext DataContext;
         public IStatusRepository StatusRepository { get; private set; }
-
         public IGenderRepository GenderRepository { get; private set; }
-
         public IJobRepository JobRepository { get; private set; }
-
         public IEmployeeRepository EmployeeRepository { get; private set; }
         public IProjectRepository ProjectRepository { get; private set; }
         public ITaskTypeRepository TaskTypeRepository { get; private set; }
+        public ITaskRepository TaskRepository { get; private set; }
         public UOW(DataContext DataContext)
         {
             this.DataContext = DataContext;
@@ -36,6 +35,7 @@ namespace Group_3_BE.Repositories
             EmployeeRepository = new EmployeeRepository(DataContext);
             ProjectRepository = new ProjectRepository(DataContext);
             TaskTypeRepository = new TaskTypeRepository(DataContext);
+            TaskRepository = new TaskRepository(DataContext);
         }
 
         public void Dispose()
