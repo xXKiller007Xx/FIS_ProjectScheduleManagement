@@ -6,7 +6,9 @@ namespace Group_3_BE.Helpers
     public class StaticParams
     {
         public static int ChangeYear = 0;
-        public static DateTime DateTimeNow => DateTime.UtcNow.AddYears(ChangeYear);
+        //public static DateTime DateTimeNow => DateTime.UtcNow.AddYears(ChangeYear);
+        public static DateTime DateTimeNow => DateTime.Now;
+
         public static DateTime DateTimeMin => DateTime.MinValue;
         public static string ExcelFileType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
         public static string ModuleName = "Group_3_BE";
