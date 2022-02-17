@@ -33,12 +33,12 @@ namespace Group_3_BE.Services.MProject
         public ProjectService
         (
             IUOW UOW,
-            IProjectValidator IProjectValidator,
+            IProjectValidator ProjectValidator,
             ILogging Logging
         )
         {
             this.UOW = UOW;
-            this.ProjectValidator = IProjectValidator;
+            this.ProjectValidator = ProjectValidator;
             this.Logging = Logging;
         }
 
