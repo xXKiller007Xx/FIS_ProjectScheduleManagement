@@ -8,10 +8,10 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Group_3_BE_Tests.RepositoriesTest
+namespace Group_3_BE_Tests.RepositoriesTest.project
 {
     [TestFixture]
-    internal class ProjectRepoTest : CommonTests
+    public partial class ProjectRepoTest : CommonTests
     {
         IProjectRepository repository;
         public ProjectRepoTest() : base()
@@ -19,38 +19,7 @@ namespace Group_3_BE_Tests.RepositoriesTest
 
         }
 
-        [SetUp]
-        public async System.Threading.Tasks.Task Setup()
-        {
-            Init();
-            await Clean();
-            repository = new ProjectRepository(DataContext);
-
-            DataContext.Statuses.Add(new StatusDAO
-            {
-                Id = 0,
-                Code = StatusEnum.ACTIVE.Code,
-                Name = StatusEnum.ACTIVE.Name,
-            });
-            DataContext.Statuses.Add(new StatusDAO
-            {
-                Id = 0,
-                Code = StatusEnum.INACTIVE.Code,
-                Name = StatusEnum.INACTIVE.Name,
-            });
-<<<<<<< HEAD
-            DataContext.SaveChanges();
-        }
-
-        [Test]
-        public async System.Threading.Tasks.Task Project_Clean()
-        {
-=======
->>>>>>> 392056c36a814a600ba5ec40bafa2843b11c0f6b
-
-            DataContext.SaveChanges();
-        }
-
+        // Create
         [Test]
         public async System.Threading.Tasks.Task Project_Create_ReturnTrue()
         {

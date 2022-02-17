@@ -4,81 +4,21 @@ using Group_3_BE.Models;
 using Group_3_BE.Repositories;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Group_3_BE_Tests.RepositoriesTest
+namespace Group_3_BE_Tests.RepositoriesTest.employee
 {
     [TestFixture]
-    public class EmployeeRepoTest : CommonTests
+    public partial class EmployeeRepoTest : CommonTests
     {
         IEmployeeRepository repository;
         public EmployeeRepoTest() : base()
         {
 
         }
-        [SetUp]
-        public async System.Threading.Tasks.Task Setup()
-        {
-            Init();
-            await Clean();
-            repository = new EmployeeRepository(DataContext);
-            DataContext.Statuses.Add(new StatusDAO
-            {
-                Id = 0,
-                Code = StatusEnum.ACTIVE.Code,
-                Name = StatusEnum.ACTIVE.Name,
-            });
-            DataContext.Statuses.Add(new StatusDAO
-            {
-                Id = 0,
-                Code = StatusEnum.INACTIVE.Code,
-                Name = StatusEnum.INACTIVE.Name,
-            });
-            DataContext.Genders.Add(new GenderDAO
-            {
-                Id = 0,
-                Code = GenderEnum.MALE.Code,
-                Name = GenderEnum.MALE.Name,
-            });
-            DataContext.Genders.Add(new GenderDAO
-            {
-                Id = 0,
-                Code = GenderEnum.FEMALE.Code,
-                Name = GenderEnum.FEMALE.Name,
-            });
-            DataContext.Genders.Add(new GenderDAO
-            {
-                Id = 0,
-                Code = GenderEnum.OTHER.Code,
-                Name = GenderEnum.OTHER.Name,
-            });
-            DataContext.Jobs.Add(new JobDAO
-            {
-                Id = 0,
-                Code = JobEnum.LEADER.Code,
-                Name = JobEnum.LEADER.Name,
-            });
-            DataContext.Jobs.Add(new JobDAO
-            {
-                Id = 0,
-                Code = JobEnum.DIRECTOR.Code,
-                Name = JobEnum.DIRECTOR.Name,
-            });
-            DataContext.Jobs.Add(new JobDAO
-            {
-                Id = 0,
-                Code = JobEnum.EMPLOYEE.Code,
-                Name = JobEnum.EMPLOYEE.Name,
-            });
-            DataContext.Jobs.Add(new JobDAO
-            {
-                Id = 0,
-                Code = JobEnum.MANAGER.Code,
-                Name = JobEnum.MANAGER.Name,
-            });
-            DataContext.SaveChanges();
-        }
+
         //Create
         [Test]
         public async System.Threading.Tasks.Task Employee_Create_ReturnTrue()
@@ -202,6 +142,55 @@ namespace Group_3_BE_Tests.RepositoriesTest
             Init();
             var Output = DataContext.Employees.Where(x => x.Id == InputDelete.Id).FirstOrDefault();
             Assert.AreEqual(InputDelete.DeletedAt.ToString(), Output.DeletedAt.ToString());
+        }
+
+        //Count + BulkMerge
+        [Test]
+        public async System.Threading.Tasks.Task Employee_Count_ReturnTrue()
+        {
+            List<Employee> Create = new List<Employee>
+            {
+                new Employee
+                {
+                    Id = 0,
+                    Code = "NV1",
+                    Name = "Nguyễn Trung Thành",
+                    GenderId = GenderEnum.MALE.Id,
+                    JobId = JobEnum.EMPLOYEE.Id,
+                    DateOfBirth = DateTime.Parse("05/12/2000"),
+                    Address = "Bắc Giang",
+                    Phone = "0868959613",
+                    Email = "trungthanhtdln@gmail.com",
+                    CreatedAt = DateTime.Now,
+                    UpdatedAt = DateTime.Now,
+                    StatusId = StatusEnum.ACTIVE.Id,
+                    Used = false,
+                },
+                new Employee
+                {
+                    Id = 0,
+                    Code = "NV2",
+                    Name = "Trương Hoàng Sơn",
+                    GenderId = GenderEnum.MALE.Id,
+                    JobId = JobEnum.DIRECTOR.Id,
+                    DateOfBirth = DateTime.Parse("05/02/2001"),
+                    Address = "Hà Nội",
+                    Phone = "0868959613",
+                    Email = "trungthanhtd7a@gmail.com",
+                    UpdatedAt = DateTime.Now,
+                    StatusId = StatusEnum.ACTIVE.Id,
+                },
+            };
+
+            repository.BulkMerge(Create);
+
+            EmployeeFilter Input = new EmployeeFilter()
+            {
+
+            };
+
+            int Output = await repository.Count(Input);
+            Assert.AreEqual(2, Output);
         }
     }
 }

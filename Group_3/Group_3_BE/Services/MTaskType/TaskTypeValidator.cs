@@ -102,7 +102,7 @@ namespace Group_3_BE.Services.MTaskType
             return TaskType.IsValidated;
         }
 
-        private async System.Threading.Tasks.Task<bool> ValidateStatus(TaskType TaskType)
+        private async Task<bool> ValidateStatus(TaskType TaskType)
         {
             if(StatusEnum.ACTIVE.Id != TaskType.Id && StatusEnum.INACTIVE.Id != TaskType.Id)
                 TaskType.AddError(nameof(TaskTypeValidator), nameof(TaskType.Description), TaskTypeMessage.Error.StatusNotExisted);

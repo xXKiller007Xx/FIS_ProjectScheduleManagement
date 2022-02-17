@@ -8,10 +8,10 @@ using System.Collections.Generic;
 using System.Linq;
 using TrueSight.Common;
 
-namespace Group_3_BE_Tests.RepositoriesTest
+namespace Group_3_BE_Tests.RepositoriesTest.taskType
 {
     [TestFixture]
-    public class TaskTypeRepoTest : CommonTests
+    public partial class TaskTypeRepoTest : CommonTests
     {
         ITaskTypeRepository repository;
         public TaskTypeRepoTest() : base()
@@ -19,28 +19,28 @@ namespace Group_3_BE_Tests.RepositoriesTest
 
         }
 
-        [SetUp]
-        public async System.Threading.Tasks.Task Setup()
-        {
-            Init();
-            await Clean();
-            repository = new TaskTypeRepository(DataContext);
+        //[SetUp]
+        //public async System.Threading.Tasks.Task Setup()
+        //{
+        //    Init();
+        //    await Clean();
+        //    repository = new TaskTypeRepository(DataContext);
 
-            DataContext.Statuses.Add(new StatusDAO
-            {
-                //Id = StatusEnum.ACTIVE.Id,
-                Code = StatusEnum.ACTIVE.Code,
-                Name = StatusEnum.ACTIVE.Name,
-            });
-            DataContext.Statuses.Add(new StatusDAO
-            {
-                //Id = StatusEnum.ACTIVE.Id,
-                Code = StatusEnum.INACTIVE.Code,
-                Name = StatusEnum.INACTIVE.Name,
-            });
+        //    DataContext.Statuses.Add(new StatusDAO
+        //    {
+        //        //Id = StatusEnum.ACTIVE.Id,
+        //        Code = StatusEnum.ACTIVE.Code,
+        //        Name = StatusEnum.ACTIVE.Name,
+        //    });
+        //    DataContext.Statuses.Add(new StatusDAO
+        //    {
+        //        //Id = StatusEnum.ACTIVE.Id,
+        //        Code = StatusEnum.INACTIVE.Code,
+        //        Name = StatusEnum.INACTIVE.Name,
+        //    });
 
-            DataContext.SaveChanges();
-        }
+        //    DataContext.SaveChanges();
+        //}
 
         //Create
         [Test]
@@ -141,55 +141,31 @@ namespace Group_3_BE_Tests.RepositoriesTest
         {
             // Lỗi Bulk Merge
 
-            //List<TaskType> Create = new List<TaskType>
-            //{
-            //    new TaskType
-            //    {
-            //        Id = 0,
-            //        Code = "Type 1",
-            //        Name = "Loai cong viec 1",
-            //        Description = "Mo ta 1",
-            //        CreatedAt = DateTime.Now,
-            //        UpdatedAt = DateTime.Now,
-            //        StatusId = StatusEnum.ACTIVE.Id,
-            //    },
-            //    new TaskType
-            //    {
-            //        Id = 0,
-            //        Code = "Type 2",
-            //        Name = "Loai cong viec 2",
-            //        Description = "Mo ta 2",
-            //        CreatedAt = DateTime.Now,
-            //        UpdatedAt = DateTime.Now,
-            //        StatusId = StatusEnum.ACTIVE.Id,
-            //    },
-            //};
-            //await repository.BulkMerge(Create);
-
-            TaskType Input1 = new TaskType
+            List<TaskType> Create = new List<TaskType>
             {
-                Id = 0,
-                Code = "Type1",
-                Name = "Loai cong viec 1",
-                Description = "Mo ta",
-                CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now,
-                StatusId = StatusEnum.ACTIVE.Id,
+                new TaskType
+                {
+                    Id = 0,
+                    Code = "Type1",
+                    Name = "Loai cong viec 1",
+                    Description = "Mo ta 1",
+                    CreatedAt = DateTime.Now,
+                    UpdatedAt = DateTime.Now,
+                    StatusId = StatusEnum.ACTIVE.Id,
+                },
+                new TaskType
+                {
+                    Id = 0,
+                    Code = "Type2",
+                    Name = "Loai cong viec 2",
+                    Description = "Mo ta 2",
+                    CreatedAt = DateTime.Now,
+                    UpdatedAt = DateTime.Now,
+                    StatusId = StatusEnum.ACTIVE.Id,
+                },
             };
-            await repository.Create(Input1);
-            Init();
-            TaskType Input2 = new TaskType
-            {
-                Id = 0,
-                Code = "Type2",
-                Name = "Loai cong viec 2",
-                Description = "Mo ta",
-                CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now,
-                StatusId = StatusEnum.ACTIVE.Id,
-            };
-            await repository.Create(Input2);
-
+            await repository.BulkMerge(Create);
+            await DataContext.BulkMergeAsync(Create);
       
             Init();
             TaskTypeFilter Input = new TaskTypeFilter
