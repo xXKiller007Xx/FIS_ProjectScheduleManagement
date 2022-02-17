@@ -14,9 +14,9 @@ namespace Group_3_BE.Services.MTaskType
         Task<bool> Create(TaskType TaskType);
         Task<bool> Update(TaskType TaskType);
         Task<bool> Delete(TaskType TaskType);
-        Task<bool> BulkDelete(List<TaskType> TaskType);
-        Task<bool> BulkMerge(List<TaskType> TaskType);
-        Task<bool> Import(List<TaskType> TaskType);
+        Task<bool> BulkDelete(List<TaskType> TaskTypes);
+        Task<bool> BulkMerge(List<TaskType> TaskTypes);
+        Task<bool> Import(List<TaskType> TaskTypes);
     }
 
     public class TaskTypeValidator : ITaskTypeValidator 
