@@ -38,6 +38,7 @@ namespace Group_3_BE_Tests.RepositoriesTest
                 Code = StatusEnum.INACTIVE.Code,
                 Name = StatusEnum.INACTIVE.Name,
             });
+            DataContext.SaveChanges();
         }
 
         [Test]
@@ -65,6 +66,7 @@ namespace Group_3_BE_Tests.RepositoriesTest
                 StatusId = StatusEnum.ACTIVE.Id,
             };
             await repository.Create(Input);
+            Init();
 
             var Output = DataContext.Projects.Where(x => x.Id == Input.Id).FirstOrDefault();
             
