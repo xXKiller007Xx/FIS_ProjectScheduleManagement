@@ -83,11 +83,11 @@ namespace Group_3_BE.Services.MProject
         {
             if (string.IsNullOrWhiteSpace(Project.Name))
             {
-                Project.AddError(nameof(ProjectValidator), nameof(TaskType.Name), ProjectMessage.Error.NameEmpty);
+                Project.AddError(nameof(ProjectValidator), nameof(Project.Name), ProjectMessage.Error.NameEmpty);
             }
             else if (Project.Name.Length > 500)
             {
-                Project.AddError(nameof(ProjectValidator), nameof(TaskType.Name), ProjectMessage.Error.NameOverLength);
+                Project.AddError(nameof(ProjectValidator), nameof(Project.Name), ProjectMessage.Error.NameOverLength);
             }
             return Project.IsValidated;
         }
