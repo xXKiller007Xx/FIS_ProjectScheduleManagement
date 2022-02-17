@@ -17,13 +17,13 @@ namespace Group_3_BE.Rpc.employee
             this.EmployeeService = EmployeeService;
         }
 
-        //[Route("/test"), HttpGet]
+        //[Route(EmployeeRoute.Test), HttpGet]
         //public async Task<ActionResult<string>> Test()
         //{
         //    return "hello";
         //}
 
-        [Route("/employee/count"), HttpPost]
+        [Route(EmployeeRoute.Count), HttpPost]
         public async Task<ActionResult<int>> Count([FromBody] Employee_EmployeeFilterDTO dto)
         {
             if (!ModelState.IsValid)
@@ -34,7 +34,7 @@ namespace Group_3_BE.Rpc.employee
             return count;
         }
 
-        [Route("/employee/list"), HttpPost]
+        [Route(EmployeeRoute.List), HttpPost]
         public async Task<ActionResult<List<Employee_EmployeeDTO>>> List([FromBody] Employee_EmployeeFilterDTO dto)
         {
             if (!ModelState.IsValid)
@@ -46,7 +46,7 @@ namespace Group_3_BE.Rpc.employee
             return E_E_DTOs;
         }
 
-        [Route("/employee/get"), HttpPost]
+        [Route(EmployeeRoute.Get), HttpPost]
         public async Task<ActionResult<Employee_EmployeeDTO>> Get([FromBody] Employee_EmployeeDTO dto)
         {
             if (!ModelState.IsValid)
@@ -57,7 +57,7 @@ namespace Group_3_BE.Rpc.employee
             return new Employee_EmployeeDTO(employee);
         }
 
-        [Route("/employee/create"), HttpPost]
+        [Route(EmployeeRoute.Create), HttpPost]
         public async Task<ActionResult<Employee_EmployeeDTO>> Create([FromBody] Employee_EmployeeDTO dto)
         {
             if (!ModelState.IsValid)
@@ -73,7 +73,7 @@ namespace Group_3_BE.Rpc.employee
                 return BadRequest(dto);
         }
 
-        [Route("/employee/update"), HttpPost]
+        [Route(EmployeeRoute.Update), HttpPost]
         public async Task<ActionResult<Employee_EmployeeDTO>> Update([FromBody] Employee_EmployeeDTO dto)
         {
             if (!ModelState.IsValid)
@@ -89,7 +89,7 @@ namespace Group_3_BE.Rpc.employee
                 return BadRequest(dto);
         }
 
-        [Route("/employee/delete"), HttpPost]
+        [Route(EmployeeRoute.Delete), HttpPost]
         public async Task<ActionResult<Employee_EmployeeDTO>> Delete([FromBody] Employee_EmployeeDTO dto)
         {
             if (!ModelState.IsValid)
@@ -105,7 +105,7 @@ namespace Group_3_BE.Rpc.employee
                 return BadRequest(dto);
         }
 
-        [Route("/employee/bulk-create"), HttpPost]
+        [Route(EmployeeRoute.BulkCreate), HttpPost]
         public async Task<ActionResult<Employee_EmployeeDTO>> BulkCreate([FromBody] List<Employee_EmployeeDTO> dtos)
         {
             if (!ModelState.IsValid)

@@ -49,6 +49,7 @@ namespace Group_3_BE.Rpc.project
         public DateFilter FinishDate { get; set; }
         public LongFilter Percentage { get; set; }
         public DateFilter UpdatedAt { get; set; }
+        public IdFilter StatusId { get; set; }
         public ProjectOrder OrderBy { get; set; }
         public string Search { get; set; }
     }

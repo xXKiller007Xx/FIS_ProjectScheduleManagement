@@ -24,7 +24,7 @@ namespace Group_3_BE.Services.MProject
         Task<ProjectFilter> ToFilter(ProjectFilter ProjectFilter);
     }
 
-    public class ProjectService
+    public class ProjectService : IProjectService
     {
         private IUOW UOW;
         private IProjectValidator ProjectValidator;
