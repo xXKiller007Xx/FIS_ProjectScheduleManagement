@@ -38,14 +38,17 @@ namespace Group_3_BE_Tests.RepositoriesTest
                 Code = StatusEnum.INACTIVE.Code,
                 Name = StatusEnum.INACTIVE.Name,
             });
+<<<<<<< HEAD
             DataContext.SaveChanges();
         }
 
         [Test]
         public async System.Threading.Tasks.Task Project_Clean()
         {
+=======
+>>>>>>> 392056c36a814a600ba5ec40bafa2843b11c0f6b
 
-            //await Clean();
+            DataContext.SaveChanges();
         }
 
         [Test]
@@ -58,7 +61,7 @@ namespace Group_3_BE_Tests.RepositoriesTest
                 Name = "Project 1",
                 Description = "mo ta prj 1",
                 StartDate = StaticParams.DateTimeNow,
-                FinishDate = StaticParams.DateTimeNow,
+                FinishDate = new DateTime(2022, 12, 12),
                 Percentage = 0,
                 CreatedAt = StaticParams.DateTimeNow,
                 UpdatedAt = StaticParams.DateTimeNow,
