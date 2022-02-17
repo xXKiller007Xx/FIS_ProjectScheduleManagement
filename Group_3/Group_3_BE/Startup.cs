@@ -30,9 +30,9 @@ namespace Group_3_BE
             .AddJsonFile($"appsettings.{env.EnvironmentName}.json", reloadOnChange: true, optional: true)
             .AddEnvironmentVariables();
 
-            Configuration = builder.Build();
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            //ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             _ = License.EfExtension;
+            Configuration = builder.Build();
         }
         public IConfiguration Configuration { get; }
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -47,11 +47,13 @@ namespace Group_3_BE
                     options.SerializerSettings.DateFormatHandling = DateFormatHandling.IsoDateFormat;
                     options.SerializerSettings.DateFormatString = "yyyy-MM-ddTHH:mm:ss.fffK";
                 });
+
             services.AddDbContext<DataContext>(options =>
               options.UseSqlServer(Configuration.GetConnectionString("DataContext"), sqlOptions =>
               {
                   sqlOptions.AddTempTableSupport();
               }));
+
             EntityFrameworkManager.ContextFactory = context =>
             {
                 var optionsBuilder = new DbContextOptionsBuilder<DataContext>();
@@ -59,6 +61,7 @@ namespace Group_3_BE
                 DataContext DataContext = new DataContext(optionsBuilder.Options);
                 return DataContext;
             };
+
             Assembly[] assemblies = new[] { Assembly.GetAssembly(typeof(IServiceScoped)),
                 Assembly.GetAssembly(typeof(Startup)) };
             services.Scan(scan => scan

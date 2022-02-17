@@ -9,8 +9,6 @@ using TrueSight.Common;
 
 namespace Group_3_BE.Rpc.employee
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class EmployeeController : RpcController
     {
         private IEmployeeService EmployeeService;
@@ -19,7 +17,13 @@ namespace Group_3_BE.Rpc.employee
             this.EmployeeService = EmployeeService;
         }
 
-        [HttpPost]
+        //[Route("/test"), HttpGet]
+        //public async Task<ActionResult<string>> Test()
+        //{
+        //    return "hello";
+        //}
+
+        [Route("/employee/count"), HttpPost]
         public async Task<ActionResult<int>> Count([FromBody] Employee_EmployeeFilterDTO dto)
         {
             if (!ModelState.IsValid)
@@ -29,7 +33,8 @@ namespace Group_3_BE.Rpc.employee
             int count = await EmployeeService.Count(filter);
             return count;
         }
-        [HttpPost]
+
+        [Route("/employee/list"), HttpPost]
         public async Task<ActionResult<List<Employee_EmployeeDTO>>> List([FromBody] Employee_EmployeeFilterDTO dto)
         {
             if (!ModelState.IsValid)
@@ -40,7 +45,8 @@ namespace Group_3_BE.Rpc.employee
             List<Employee_EmployeeDTO> E_E_DTOs = employees.Select(x => new Employee_EmployeeDTO(x)).ToList();
             return E_E_DTOs;
         }
-        [HttpPost]
+
+        [Route("/employee/get"), HttpPost]
         public async Task<ActionResult<Employee_EmployeeDTO>> Get([FromBody] Employee_EmployeeDTO dto)
         {
             if (!ModelState.IsValid)
@@ -50,7 +56,8 @@ namespace Group_3_BE.Rpc.employee
             Employee employee = await EmployeeService.Get(dto.Id);
             return new Employee_EmployeeDTO(employee);
         }
-        [HttpPost]
+
+        [Route("/employee/create"), HttpPost]
         public async Task<ActionResult<Employee_EmployeeDTO>> Create([FromBody] Employee_EmployeeDTO dto)
         {
             if (!ModelState.IsValid)
@@ -65,7 +72,8 @@ namespace Group_3_BE.Rpc.employee
             else
                 return BadRequest(dto);
         }
-        [HttpPost]
+
+        [Route("/employee/update"), HttpPost]
         public async Task<ActionResult<Employee_EmployeeDTO>> Update([FromBody] Employee_EmployeeDTO dto)
         {
             if (!ModelState.IsValid)
@@ -80,7 +88,8 @@ namespace Group_3_BE.Rpc.employee
             else
                 return BadRequest(dto);
         }
-        [HttpPost]
+
+        [Route("/employee/delete"), HttpPost]
         public async Task<ActionResult<Employee_EmployeeDTO>> Delete([FromBody] Employee_EmployeeDTO dto)
         {
             if (!ModelState.IsValid)
@@ -95,7 +104,8 @@ namespace Group_3_BE.Rpc.employee
             else
                 return BadRequest(dto);
         }
-        [HttpPost]
+
+        [Route("/employee/bulk-create"), HttpPost]
         public async Task<ActionResult<Employee_EmployeeDTO>> BulkCreate([FromBody] List<Employee_EmployeeDTO> dtos)
         {
             if (!ModelState.IsValid)
@@ -106,6 +116,7 @@ namespace Group_3_BE.Rpc.employee
                 return BadRequest(employees);
             return Ok();
         }
+
         private async Task<bool> HasPermission(long Id)
         {
             EmployeeFilter filter = new EmployeeFilter();
@@ -119,6 +130,7 @@ namespace Group_3_BE.Rpc.employee
             }
             return true;
         }
+
         private Employee ConvertDTOToEntity(Employee_EmployeeDTO dto)
         {
             Employee employee = new Employee();
@@ -152,6 +164,7 @@ namespace Group_3_BE.Rpc.employee
             };
             return employee;
         }
+
         private EmployeeFilter ConvertFilterDTOToFilterEntity(Employee_EmployeeFilterDTO Employee_EmployeeFilterDTO)
         {
             EmployeeFilter EmployeeFilter = new EmployeeFilter();

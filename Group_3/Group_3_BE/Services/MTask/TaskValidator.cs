@@ -17,7 +17,7 @@ namespace Group_3_BE.Services.MTask
         Task<bool> BulkMerge(List<Entities.Task> Tasks);
         Task<bool> Import(List<Entities.Task> Tasks);
     }
-    public class TaskValidator
+    public class TaskValidator : ITaskValidator
     {
         private IUOW UOW;
         private TaskMessage TaskMessage;
