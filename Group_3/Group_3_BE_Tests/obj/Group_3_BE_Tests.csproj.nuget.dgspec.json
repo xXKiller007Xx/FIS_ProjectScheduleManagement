@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eco\\OneDrive - vnu.edu.vn\\Máy tính\\Project Nhom 3\\Group_3\\Group_3_BE_Tests\\Group_3_BE_Tests.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE_Tests\\Group_3_BE_Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eco\\OneDrive - vnu.edu.vn\\Máy tính\\Project Nhom 3\\Group_3\\Group_3_BE\\Group_3_BE.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE\\Group_3_BE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eco\\OneDrive - vnu.edu.vn\\Máy tính\\Project Nhom 3\\Group_3\\Group_3_BE\\Group_3_BE.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE\\Group_3_BE.csproj",
         "projectName": "Group_3_BE",
-        "projectPath": "C:\\Users\\eco\\OneDrive - vnu.edu.vn\\Máy tính\\Project Nhom 3\\Group_3\\Group_3_BE\\Group_3_BE.csproj",
-        "packagesPath": "C:\\Users\\eco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eco\\OneDrive - vnu.edu.vn\\Máy tính\\Project Nhom 3\\Group_3\\Group_3_BE\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE\\Group_3_BE.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\eco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -127,17 +127,17 @@
         }
       }
     },
-    "C:\\Users\\eco\\OneDrive - vnu.edu.vn\\Máy tính\\Project Nhom 3\\Group_3\\Group_3_BE_Tests\\Group_3_BE_Tests.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE_Tests\\Group_3_BE_Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eco\\OneDrive - vnu.edu.vn\\Máy tính\\Project Nhom 3\\Group_3\\Group_3_BE_Tests\\Group_3_BE_Tests.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE_Tests\\Group_3_BE_Tests.csproj",
         "projectName": "Group_3_BE_Tests",
-        "projectPath": "C:\\Users\\eco\\OneDrive - vnu.edu.vn\\Máy tính\\Project Nhom 3\\Group_3\\Group_3_BE_Tests\\Group_3_BE_Tests.csproj",
-        "packagesPath": "C:\\Users\\eco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eco\\OneDrive - vnu.edu.vn\\Máy tính\\Project Nhom 3\\Group_3\\Group_3_BE_Tests\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE_Tests\\Group_3_BE_Tests.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE_Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\eco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -151,8 +151,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\eco\\OneDrive - vnu.edu.vn\\Máy tính\\Project Nhom 3\\Group_3\\Group_3_BE\\Group_3_BE.csproj": {
-                "projectPath": "C:\\Users\\eco\\OneDrive - vnu.edu.vn\\Máy tính\\Project Nhom 3\\Group_3\\Group_3_BE\\Group_3_BE.csproj"
+              "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE\\Group_3_BE.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Thực tập\\Dự án\\Làm thử\\FIS_ProjectScheduleManagement\\Group_3\\Group_3_BE\\Group_3_BE.csproj"
               }
             }
           }

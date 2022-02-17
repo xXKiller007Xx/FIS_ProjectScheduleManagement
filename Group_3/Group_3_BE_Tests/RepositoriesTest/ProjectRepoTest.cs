@@ -38,6 +38,15 @@ namespace Group_3_BE_Tests.RepositoriesTest
                 Code = StatusEnum.INACTIVE.Code,
                 Name = StatusEnum.INACTIVE.Name,
             });
+<<<<<<< HEAD
+            DataContext.SaveChanges();
+        }
+
+        [Test]
+        public async System.Threading.Tasks.Task Project_Clean()
+        {
+=======
+>>>>>>> 392056c36a814a600ba5ec40bafa2843b11c0f6b
 
             DataContext.SaveChanges();
         }
@@ -60,6 +69,7 @@ namespace Group_3_BE_Tests.RepositoriesTest
                 StatusId = StatusEnum.ACTIVE.Id,
             };
             await repository.Create(Input);
+            Init();
 
             var Output = DataContext.Projects.Where(x => x.Id == Input.Id).FirstOrDefault();
             
