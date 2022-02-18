@@ -336,7 +336,7 @@ namespace Group_3_BE.Repositories
                 TaskTypeDAO.UpdatedAt = StaticParams.DateTimeNow;
                 TaskTypeDAO.StatusId = TaskType.StatusId;
 
-                DataContext.TaskTypes.Add(TaskTypeDAO);
+                TaskTypeDAOs.Add(TaskTypeDAO);
             }
             await DataContext.BulkMergeAsync(TaskTypeDAOs);
             return true;
@@ -355,7 +355,7 @@ namespace Group_3_BE.Repositories
                 TaskTypeDAO.UpdatedAt = StaticParams.DateTimeNow;
                 TaskTypeDAO.StatusId = TaskType.StatusId;
 
-                DataContext.TaskTypes.Add(TaskTypeDAO);
+                TaskTypeDAOs.Add(TaskTypeDAO);
             }
             await DataContext.BulkUpdateAsync(TaskTypeDAOs);
             return true;

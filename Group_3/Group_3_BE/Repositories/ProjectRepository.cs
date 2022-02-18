@@ -142,8 +142,8 @@ namespace Group_3_BE.Repositories
             {
                 Id = filter.Selects.Contains(ProjectSelect.Id) ? q.Id : default(long),
                 Code = filter.Selects.Contains(ProjectSelect.Code) ? q.Code : default(string),
-                Name = filter.Selects.Contains(ProjectSelect.Name) ? q.Code : default(string),
-                Description = filter.Selects.Contains(ProjectSelect.Description) ? q.Code : default(string),
+                Name = filter.Selects.Contains(ProjectSelect.Name) ? q.Name : default(string),
+                Description = filter.Selects.Contains(ProjectSelect.Description) ? q.Description : default(string),
                 StartDate = filter.Selects.Contains(ProjectSelect.StartDate) ? q.StartDate : default(DateTime),
                 FinishDate = filter.Selects.Contains(ProjectSelect.FinishDate) ? q.FinishDate : default(DateTime),
                 Percentage = filter.Selects.Contains(ProjectSelect.Percentage) ? q.Percentage : default(int),

@@ -1,4 +1,5 @@
-﻿using Group_3_BE.Enums;
+﻿using Group_3_BE.Entities;
+using Group_3_BE.Enums;
 using Group_3_BE.Models;
 using Group_3_BE.Repositories;
 using NUnit.Framework;
@@ -18,6 +19,7 @@ namespace Group_3_BE_Tests.RepositoriesTest.taskType
             repository = new TaskTypeRepository(DataContext);
 
             StatusGiven();
+            //TaskTypeGiven();
         }
 
         public void StatusGiven()
@@ -35,6 +37,35 @@ namespace Group_3_BE_Tests.RepositoriesTest.taskType
                 Code = StatusEnum.INACTIVE.Code,
                 Name = StatusEnum.INACTIVE.Name,
             });
+
+            DataContext.SaveChanges();
+        }
+
+        public void TaskTypeGiven()
+        {
+            TaskTypeDAO Input1 = new TaskTypeDAO
+            {
+                Id = 0,
+                Code = "Type1",
+                Name = "Loai cong viec 1",
+                Description = "Mo ta",
+                CreatedAt = DateTime.Now,
+                UpdatedAt = DateTime.Now,
+                StatusId = StatusEnum.ACTIVE.Id,
+            };
+            DataContext.TaskTypes.Add(Input1);
+
+            TaskTypeDAO Input2 = new TaskTypeDAO
+            {
+                Id = 0,
+                Code = "Type2",
+                Name = "Loai cong viec 2",
+                Description = "Mo ta",
+                CreatedAt = DateTime.Now,
+                UpdatedAt = DateTime.Now,
+                StatusId = StatusEnum.ACTIVE.Id,
+            };
+            DataContext.TaskTypes.Add(Input2);
 
             DataContext.SaveChanges();
         }

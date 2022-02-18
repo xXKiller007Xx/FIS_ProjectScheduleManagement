@@ -139,9 +139,7 @@ namespace Group_3_BE_Tests.RepositoriesTest.taskType
         [Test]
         public async System.Threading.Tasks.Task TaskType_Count_ReturnTrue()
         {
-            // Lỗi Bulk Merge
-
-            List<TaskType> Create = new List<TaskType>
+            List<TaskType> InputData = new List<TaskType>
             {
                 new TaskType
                 {
@@ -164,14 +162,15 @@ namespace Group_3_BE_Tests.RepositoriesTest.taskType
                     StatusId = StatusEnum.ACTIVE.Id,
                 },
             };
-            await repository.BulkMerge(Create);
-            await DataContext.BulkMergeAsync(Create);
-      
+            await repository.BulkMerge(InputData);
+
             Init();
+
             TaskTypeFilter Input = new TaskTypeFilter
             {
-               
+               //Id = new IdFilter { Equal = 1 }
             };
+
             int Output = await repository.Count(Input);
             Assert.AreEqual(2, Output);
         }
@@ -213,10 +212,10 @@ namespace Group_3_BE_Tests.RepositoriesTest.taskType
             await repository.BulkDelete(Input);
 
             Init();
-            //List<TaskType> Outs = await repository.List(new List<long> { 1, 2});
-            //foreach(var Out in Outs)
+            //List<TaskType> Outs = await repository.List(new List<long> { 1, 2 });
+            //foreach (var Out in Outs)
             //{
-            //    Assert.AreEqual(null, Out.DeletedAt);
+            //    Console.WriteLine(Out.DeletedAt);
             //}
         }
     }

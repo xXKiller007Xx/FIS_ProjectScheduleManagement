@@ -402,7 +402,7 @@ namespace Group_3_BE.Repositories
                 TaskDAO.UpdatedAt = StaticParams.DateTimeNow;
                 TaskDAO.StatusId = Task.StatusId;
 
-                DataContext.Tasks.Add(TaskDAO);
+                TaskDAOs.Add(TaskDAO);
             }
             await DataContext.BulkMergeAsync(TaskDAOs);
             return true;
@@ -427,7 +427,7 @@ namespace Group_3_BE.Repositories
                 TaskDAO.UpdatedAt = StaticParams.DateTimeNow;
                 TaskDAO.StatusId = Task.StatusId;
 
-                DataContext.Tasks.Add(TaskDAO);
+                TaskDAOs.Add(TaskDAO);
             }
             await DataContext.BulkUpdateAsync(TaskDAOs);
             return true;
